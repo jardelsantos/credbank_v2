@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\ContaController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,4 +23,6 @@ use Illuminate\Support\Facades\Route;
 // );
 Route::get( '/', function () { return view('inicial'); } );
 Route::get( '/institucional', function () { return view('institucional'); } );
-Route::get( '/criar_conta', function () { return view('criar_conta'); } );
+Route::get( '/criar_conta', [ContaController::class, 'create'] );
+
+Route::resource('conta', ContaController::class);

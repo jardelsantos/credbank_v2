@@ -1,6 +1,18 @@
 @extends('credbank')
 
 @section('content')
+
+@if ($errors->any())
+    <div class="alert alert-danger">
+        <strong>Whoops!</strong> Ocorrem erros!<br><br>
+        <ul>
+            @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+            @endforeach
+        </ul>
+    </div>
+@endif
+
 <form action="{{ route('conta.store') }}" method="POST">
     @csrf
     <div class="row">
@@ -19,7 +31,7 @@
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3">
             <div class="form-group">
                 <label for="campo-detalhes" class="form-label">Detalhes:</label>
-                <textarea class="form-control" id="campo-detalhes" style="height:150px" name="detail" placeholder="Detalhes"></textarea>
+                <input type="text" class="form-control" id="campo-detalhes" name="password" placeholder="Senha"/>
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-6 col-lg-3 text-center">
