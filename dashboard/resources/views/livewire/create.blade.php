@@ -18,12 +18,36 @@
                     @error('lancamento') <span class="text-red-500">{{ $message }}</span>@enderror
                 </div>
 
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Categoria:</label>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Informe Categoria" wire:model="categoria">
+                    @error('categoria') <span class="text-red-500">{{ $message }}</span>@enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Descrição:</label>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Informe Descrição" wire:model="descricao">
+                    @error('descricao') <span class="text-red-500">{{ $message }}</span>@enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Tipo:</label>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Informe Tipo" wire:model="tipo">
+                    @error('tipo') <span class="text-red-500">{{ $message }}</span>@enderror
+                </div>
+
+                <div class="mb-4">
+                    <label for="exampleFormControlInput1" class="block text-gray-700 text-sm font-bold mb-2">Valor:</label>
+                    <input type="text" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="exampleFormControlInput1" placeholder="Informe Valor" wire:model="valor">
+                    @error('valor') <span class="text-red-500">{{ $message }}</span>@enderror
+                </div>
+
           </div>
         </div>
 
         <div class="bg-gray-50 px-4 py-3 sm:px-6 sm:flex sm:flex-row-reverse">
           <span class="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
-            <button wire:click.prevent="store()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium text-white shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
+            <button wire:click.prevent="store()" type="button" class="inline-flex justify-center w-full rounded-md border border-transparent px-4 py-2 bg-green-600 text-base leading-6 font-medium shadow-sm hover:bg-green-500 focus:outline-none focus:border-green-700 focus:shadow-outline-green transition ease-in-out duration-150 sm:text-sm sm:leading-5">
               Salvar
             </button>
           </span>
