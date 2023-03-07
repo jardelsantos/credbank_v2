@@ -28,4 +28,4 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Route::get('extratos', Extratos::class)->middleware('auth');
+Route::get('extratos', Extratos::class)->middleware('auth')->name('extratos');
