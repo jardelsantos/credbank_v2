@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Livewire\Extratos;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -26,3 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
 });
+
+Route::get('extratos', Extratos::class)->middleware('auth');
