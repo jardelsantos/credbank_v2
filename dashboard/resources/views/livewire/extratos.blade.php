@@ -15,18 +15,42 @@
                   </div>
                 </div>
             @endif
-            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">Create New Post</button>
+            <button wire:click="create()" class="bg-blue-500 hover:bg-blue-700 font-bold py-2 px-4 rounded my-3">Criar Registro</button>
             @if($isOpen)
                 @include('livewire.create')
             @endif
             <table class="table-fixed w-full">
                 <thead>
                     <tr class="bg-gray-100">
+                        <th class="px-4 py-2 w-20">ID</th>
+                        <th class="px-4 py-2">Lançamento</th></th>
+                        <th class="px-4 py-2">Categoria</th>
+                        <th class="px-4 py-2">Descrição</th>
+                        <th class="px-4 py-2">Tipo</th>
+                        <th class="px-4 py-2">Valor</th>
+                        <th class="px-4 py-2">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach($posts as $post)
+                    @foreach($extratos as $extrato)
                     <tr>
+                        <td class="border px-4 py-2">{{ $extrato->id }}</td>
+                        <td class="border px-4 py-2">{{ $extrato->lancamento }}</td>
+                        <td class="border px-4 py-2">{{ $extrato->categoria }}</td>
+                        <td class="border px-4 py-2">{{ $extrato->descricao }}</td>
+                        <td class="border px-4 py-2">{{ $extrato->tipo }}</td>
+                        <td class="border px-4 py-2">{{ $extrato->valor }}</td>
+                        <td class="border px-4 py-2">
+                            <button
+                                wire:click="edit({{ $extrato->id }})"
+                                class="bg-blue-500 hover:bg-blue-700
+                                        text-white font-bold py-2 px-4 rounded">Editar</button>
+
+                            <button
+                                wire:click="delete({{ $extrato->id }})"
+                                class="bg-red-500 hover:bg-red-700
+                                                text-white font-bold py-2 px-4 rounded">Apagar</button>
+                        </td>
                     </tr>
                     @endforeach
                 </tbody>
